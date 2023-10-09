@@ -21,7 +21,6 @@ public class String02 {
          * a  ->  常量池中的 hello
          * b  ->  常量池中的 world
          * c  ->  堆
-         *
          * 总结： String a = "111" + "222";  常量相加  看的是池  变量相加  是堆
          * */
     }
