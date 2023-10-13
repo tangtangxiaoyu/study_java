@@ -12,13 +12,14 @@ public class Collection02 {
         co.add(new Book("111","111"));
         co.add(new Book("222","222"));
         co.add(new Book("333","333"));
-        Iterator iterator = co.iterator();
-
-        while (iterator.hasNext()){
-            Object o = iterator.next();
-            System.out.println(o);
+//        Iterator iterator = co.iterator();
+//        while (iterator.hasNext()){
+//            Object o = iterator.next();
+//            System.out.println(o);
+//        }
+        for(Object book: co){
+            System.out.println(book);
         }
-
     }
 }
 
