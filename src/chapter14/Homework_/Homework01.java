@@ -10,13 +10,19 @@ public class Homework01 {
         arr.add(new News("新闻1111111111111111111111111"));
         arr.add(new News("新闻2"));
         arr.add(new News("新闻3"));
+        News nnn = new News("新闻4");
+        arr.add(nnn);
+        arr.addAll(arr);
+        arr.remove(nnn);
 
-        int size = arr.size() - 1;
-        for (int i = size; i >= 0; i--) {
-            News n = (News)arr.get(i);
-//            System.out.println(n.getTitle());
-            System.out.println(processTittle(n.getTitle()));
-        }
+//        int size = arr.size() - 1;
+//        for (int i = size; i >= 0; i--) {
+//            News n = (News)arr.get(i);
+//            System.out.println(processTittle(n.getTitle()));
+//        }
+
+        System.out.println(arr);
+        System.out.println(arr.contains(nnn));
 
     }
 
