@@ -13,7 +13,7 @@ class T extends Thread{
     private boolean flag = true;
 
     public void setFlag(boolean flag) {
-        this.flag = flag;
+        this.flag = flag; 
     }
 
     @Override
