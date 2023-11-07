@@ -1,4 +1,4 @@
-package chapter17.threaduse;
+package chapter17.Threaduse;
 
 public class Thread03 {
     public static void main(String[] args) {
