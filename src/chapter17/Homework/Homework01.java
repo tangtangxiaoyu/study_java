@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Homework01 {
     public static void main(String[] args) {
-        B b = new B();
+        A a = new A();
+        a.start();
+        B b = new B(a);
         b.start();
     }
 }
@@ -28,16 +30,18 @@ class A extends Thread{
 }
 
 class B extends Thread{
+    private A a;
+    private Scanner scanner = new Scanner(System.in);
+
+    public B(A a) {
+        this.a = a;
+    }
+
     public void run() {
-        A a = new A();
-        a.start();
-        Scanner scanner = new Scanner(System.in);
-        String input;
         while (true) {
             System.out.print("请输入一个值（输入Q退出）：");
-            input = scanner.next();
-
-            if (input.equals("Q")) {
+            char key = scanner.next().toUpperCase().charAt(0);
+            if (key == 'Q') {
                 System.out.println("用户输入了Q，程序退出。");
                 a.setFlag(false);
                 break;
