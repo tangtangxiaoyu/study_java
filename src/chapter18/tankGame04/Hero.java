@@ -1,11 +1,17 @@
 package chapter18.tankGame04;
 
+import java.util.Vector;
+
 public class Hero extends Tank {
     Shot shot = null;
+    Vector<Shot> shots = new Vector<>();
     public Hero(int x, int y) {
         super(x, y);
     }
     public void shotEnemyTank(){
+        if(shots.size() == 5){
+            return;
+        }
         switch (getDirect()){
             case 0:
                 shot = new Shot(getX() + 20, getY(), 0);
@@ -20,6 +26,7 @@ public class Hero extends Tank {
                 shot = new Shot(getX(), getY() + 20, 3);
                 break;
         }
+        shots.add(shot);
         new Thread(shot).start();
     }
 }

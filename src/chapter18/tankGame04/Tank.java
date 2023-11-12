@@ -6,6 +6,7 @@ public class Tank {
     private int y;
     private int direct = 0;
     private int speed = 1;
+    boolean isLive = true;
 
     public int getSpeed() {
         return speed;
