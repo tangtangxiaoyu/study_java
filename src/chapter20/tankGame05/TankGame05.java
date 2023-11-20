@@ -1,14 +1,13 @@
-package chapter18.tankGame04;
+package chapter20.tankGame05;
 
 import javax.swing.*;
 
-public class TankGame04 extends JFrame {
+public class TankGame05 extends JFrame {
     MyPanel mp = null;
     public static void main(String[] args) {
-        TankGame04 TankGame04 = new TankGame04();
-
+        TankGame05 tankGame05 = new TankGame05();
     }
-    public TankGame04(){
+    public TankGame05(){
         mp = new MyPanel();
         Thread thread = new Thread(mp);
         thread.start();
