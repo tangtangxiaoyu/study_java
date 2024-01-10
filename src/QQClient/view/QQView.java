@@ -1,10 +1,12 @@
 package QQClient.view;
 
+import QQClient.service.UserClientService;
 import QQClient.utils.Utility;
 
 public class QQView {
     private boolean loop = true;
     private String key = "";
+    private UserClientService userClientService = new UserClientService();
 
     public static void main(String[] args) {
         new QQView().mainView();
@@ -25,7 +27,7 @@ public class QQView {
                     String userId = Utility.readString(50);
                     System.out.println("请输入秘密:");
                     String pwd = Utility.readString(50);
-                    if(true){
+                    if(userClientService.checkUser(userId,pwd)){
                         System.out.println("==================欢迎"+ userId +"=====================");
                         while (loop){
                             System.out.println("\n==============二级菜单"+ userId +"=====================");

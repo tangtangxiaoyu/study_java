@@ -18,6 +18,9 @@ public class Message implements Serializable {
         this.msgType = msgType;
     }
 
+    public Message() {
+    }
+
     public Message(String sender, String getter, String content, String time) {
         this.sender = sender;
         this.getter = getter;
