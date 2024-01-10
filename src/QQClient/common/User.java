@@ -1,4 +1,4 @@
-package QQServer.common;
+package QQClient.common;
 
 import java.io.Serializable;
 
@@ -7,6 +7,10 @@ public class User implements Serializable {
 
     private String userId;
     private String passwd;
+
+
+    public User() {
+    }
 
     public User(String userId, String passwd) {
         this.userId = userId;

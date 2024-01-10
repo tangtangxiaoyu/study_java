@@ -1,4 +1,4 @@
-package QQServer.common;
+package QQClient.common;
 
 public interface MessageType {
     String MESSAGE_LOGIN_SUCCESS = "1";  //登录成功
