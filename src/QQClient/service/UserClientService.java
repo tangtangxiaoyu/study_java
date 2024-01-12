@@ -38,4 +38,19 @@ public class UserClientService {
         }
         return b;
     }
+    //获取在线用户列表
+    public void onLineFriendList(){
+        Message message = new Message();
+        message.setMsgType(MessageType.MESSAGE_GET_ONLINE_FRIEND);
+        message.setSender(u.getUserId());
+        try {
+            //
+            ClientConnectServerThread clientConnectServerThread = ManageClientConnectServerThread.getClientConnectServerThread(u.getUserId());
+            Socket socket = clientConnectServerThread.getSocket();
+            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            oos.writeObject(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

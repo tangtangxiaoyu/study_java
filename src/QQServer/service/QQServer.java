@@ -46,6 +46,7 @@ public class QQServer {
                 User u = (User) ois.readObject();
                 Message message = new Message();
                 if(checkUser(u.getUserId(),u.getPasswd())){
+                    System.out.println(u.getUserId()+"用户已连接");
                     message.setMsgType(MessageType.MESSAGE_LOGIN_SUCCESS);
                     oos.writeObject(message);
                     ServerConnectClientThread serverConnectClientThread = new ServerConnectClientThread(socket, u.getUserId());
