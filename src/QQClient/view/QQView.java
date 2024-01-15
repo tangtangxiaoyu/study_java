@@ -52,6 +52,7 @@ public class QQView {
                                     System.out.println("发送文件");
                                     break;
                                 case "9":
+                                    userClientService.logout();
                                     loop = false;
                                     break;
                             }

@@ -22,4 +22,9 @@ public class ManageClientThreads {
         }
         return str;
     }
+
+    public static void removeServerConnectClientThread(String userId){
+        hm.remove(userId);
+    }
+
 }

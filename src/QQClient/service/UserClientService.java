@@ -4,6 +4,7 @@ import QQClient.common.Message;
 import QQClient.common.MessageType;
 import QQClient.common.User;
 
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
@@ -34,7 +35,7 @@ public class UserClientService {
                 socket.close();
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return b;
     }
@@ -52,5 +53,22 @@ public class UserClientService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void logout(){
+        Message message = new Message();
+        message.setMsgType(MessageType.MESSAGE_CLIENT_EXIT);
+        message.setSender(u.getUserId());
+
+        try {
+//            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            ObjectOutputStream oos = new ObjectOutputStream(ManageClientConnectServerThread.getClientConnectServerThread(u.getUserId()).getSocket().getOutputStream());
+            oos.writeObject(message);
+            System.out.println(u.getUserId() + "退出了");
+            System.exit(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

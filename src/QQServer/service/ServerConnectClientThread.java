@@ -32,7 +32,12 @@ public class ServerConnectClientThread extends Thread {
                     message1.setSender(message.getSender());
                     ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
                     oos.writeObject(message1);
-                }else{
+                } else if(message.getMsgType().equals(MessageType.MESSAGE_CLIENT_EXIT)){
+                    System.out.println(message.getSender() + "退出");
+                    ManageClientThreads.removeServerConnectClientThread(message.getSender());
+                    socket.close();
+                    break;
+                } else{
 
                 }
             } catch (Exception e) {
